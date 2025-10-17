@@ -1,0 +1,235 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "6de6d1010172017750c5",
+  "position": {
+    "x": 639.40298507462683,
+    "y": 0,
+    "z": 2000,
+    "height": 360,
+    "width": 640.29850746268653,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "job_postings_flat"
+                    }
+                  },
+                  "Property": "job_title_short"
+                }
+              },
+              "queryRef": "job_postings_flat.job_title_short",
+              "nativeQueryRef": "Job title",
+              "active": true,
+              "displayName": "Job title"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "job_postings_flat"
+                    }
+                  },
+                  "Property": "job_no_degree_mention"
+                }
+              },
+              "queryRef": "job_postings_flat.job_no_degree_mention",
+              "nativeQueryRef": "No Degree Mentioned",
+              "displayName": "No Degree Mentioned"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "job_postings_flat"
+                        }
+                      },
+                      "Property": "job_title"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(job_postings_flat.job_title)",
+              "nativeQueryRef": "Job counts",
+              "displayName": "Job counts"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "job_postings_flat"
+                      }
+                    },
+                    "Property": "job_title"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "categoryAxis": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'What Are The Top Jobs With No Degree Mention?'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            },
+            "heading": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Heading3'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "77810881027b48d9410b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "job_postings_flat"
+              }
+            },
+            "Property": "job_title_short"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f209e19b0306207921db",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "job_postings_flat"
+              }
+            },
+            "Property": "job_no_degree_mention"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1513df03dad38111e6cc",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "job_postings_flat"
+                  }
+                },
+                "Property": "job_title"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

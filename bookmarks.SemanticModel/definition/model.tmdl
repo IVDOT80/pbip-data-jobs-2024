@@ -1,0 +1,20 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBI_QueryOrder = ["job_postings_flat"]
+
+ref table job_postings_flat
+ref table DateTableTemplate_aec2f312-70d0-4720-9342-eb8ee7b72798
+ref table LocalDateTable_02ed49a9-d23b-44bc-9cd5-bae6414f2b5f
+
+ref cultureInfo en-US
+

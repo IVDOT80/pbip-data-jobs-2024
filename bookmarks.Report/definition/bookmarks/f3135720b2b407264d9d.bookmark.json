@@ -1,0 +1,707 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.4.0/schema.json",
+  "displayName": "slicer off",
+  "name": "f3135720b2b407264d9d",
+  "options": {
+    "targetVisualNames": [],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "6c7c0b44310375ed9086",
+    "sections": {
+      "6c7c0b44310375ed9086": {
+        "filters": {
+          "byExpr": [
+            {
+              "name": "d03d0fa8eb36bbd6c0c9",
+              "type": "Advanced",
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "j",
+                    "Entity": "job_postings_flat",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Contains": {
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "j"
+                              }
+                            },
+                            "Property": "job_title_short"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'Data'"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "job_postings_flat"
+                    }
+                  },
+                  "Property": "job_title_short"
+                }
+              },
+              "howCreated": 1
+            }
+          ]
+        },
+        "visualContainers": {
+          "1e5bf9ad428e9d025c05": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "574cdb6bd93c6cd58054": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "a08e9a6ab03282b0c064",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "job_postings_flat"
+                        }
+                      },
+                      "Property": "job_title_short"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "39df4a95da080096b5da",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "job_postings_flat"
+                            }
+                          },
+                          "Property": "salary_year_avg"
+                        }
+                      },
+                      "Function": 6
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "barChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "job_postings_flat"
+                            }
+                          },
+                          "Property": "salary_year_avg"
+                        }
+                      },
+                      "Function": 6
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "job_postings_flat"
+                        }
+                      },
+                      "Property": "job_title_short"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "26f22c8a8920e2ea349d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "788ae0dec805c8168043",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "job_postings_flat"
+                            }
+                          },
+                          "Property": "salary_year_avg"
+                        }
+                      },
+                      "Function": 6
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "14f88ea89ba1643b51d9",
+                  "type": "TopN",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "subquery",
+                        "Expression": {
+                          "Subquery": {
+                            "Query": {
+                              "Version": 2,
+                              "From": [
+                                {
+                                  "Name": "j",
+                                  "Entity": "job_postings_flat",
+                                  "Type": 0
+                                }
+                              ],
+                              "Select": [
+                                {
+                                  "Column": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "j"
+                                      }
+                                    },
+                                    "Property": "job_country"
+                                  },
+                                  "Name": "field"
+                                }
+                              ],
+                              "OrderBy": [
+                                {
+                                  "Direction": 2,
+                                  "Expression": {
+                                    "Aggregation": {
+                                      "Expression": {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "j"
+                                            }
+                                          },
+                                          "Property": "job_title"
+                                        }
+                                      },
+                                      "Function": 5
+                                    }
+                                  }
+                                }
+                              ],
+                              "Top": 4
+                            }
+                          }
+                        },
+                        "Type": 2
+                      },
+                      {
+                        "Name": "j",
+                        "Entity": "job_postings_flat",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "j"
+                                    }
+                                  },
+                                  "Property": "job_country"
+                                }
+                              }
+                            ],
+                            "Table": {
+                              "SourceRef": {
+                                "Source": "subquery"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "job_postings_flat"
+                        }
+                      },
+                      "Property": "job_country"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5c94e5a30c09330a5bea",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "job_postings_flat"
+                        }
+                      },
+                      "Property": "job_title_short"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredColumnChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "job_postings_flat"
+                            }
+                          },
+                          "Property": "salary_year_avg"
+                        }
+                      },
+                      "Function": 6
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "job_postings_flat"
+                        }
+                      },
+                      "Property": "job_country"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "6de6d1010172017750c5": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "fa78b69ec03b478b009c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "job_postings_flat"
+                        }
+                      },
+                      "Property": "job_title_short"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f92cbde68088ae1b1660",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "job_postings_flat"
+                        }
+                      },
+                      "Property": "job_no_degree_mention"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b03253cc1972c24a2a26",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "job_postings_flat"
+                            }
+                          },
+                          "Property": "job_title"
+                        }
+                      },
+                      "Function": 5
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "columnChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "job_postings_flat"
+                            }
+                          },
+                          "Property": "job_title"
+                        }
+                      },
+                      "Function": 5
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "job_postings_flat"
+                        }
+                      },
+                      "Property": "job_title_short"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "b28ea1f034534942d48e": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "156ed92e402a40052b92",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "job_postings_flat"
+                        }
+                      },
+                      "Property": "job_title_short"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "dc2a9c6ada3c79e0d004",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "job_postings_flat"
+                            }
+                          },
+                          "Property": "job_title_short"
+                        }
+                      },
+                      "Function": 5
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "07ea11b3c56e4ec4d8a3",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "job_postings_flat"
+                        }
+                      },
+                      "Property": "job_no_degree_mention"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "hundredPercentStackedBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "job_postings_flat"
+                            }
+                          },
+                          "Property": "job_title_short"
+                        }
+                      },
+                      "Function": 5
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "job_postings_flat"
+                        }
+                      },
+                      "Property": "job_title_short"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "062308801447e841ec06": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "2545ffd90a2ce62a2672": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "8ee1165689b1aa029886": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "854ccbb7d160c8004454": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "f6239abcb0bdb5a81804": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "8491b4a160013c0d02dc",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "job_postings_flat"
+                        }
+                      },
+                      "Property": "job_title_short"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "j",
+                                "Entity": "job_postings_flat",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "j"
+                                            }
+                                          },
+                                          "Property": "job_title_short"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Data Analyst'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Data Engineer'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Data Scientist'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Basic'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "job_postings_flat"
+                        }
+                      },
+                      "Property": "job_title_short"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
