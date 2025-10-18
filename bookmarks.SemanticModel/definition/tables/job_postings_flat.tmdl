@@ -1,6 +1,42 @@
 table job_postings_flat
 	lineageTag: d174e194-9517-4ae3-98da-998946e2b0f9
 
+	measure 'Salary Star rating' =
+			
+			VAR __MAX_NUMBER_OF_STARS = 5
+			VAR __MIN_RATED_VALUE = 75000
+			VAR __MAX_RATED_VALUE = 150000
+			VAR __BASE_VALUE = MEDIAN('job_postings_flat'[salary_year_avg])
+			VAR __NORMALIZED_BASE_VALUE =
+				MIN(
+					MAX(
+						DIVIDE(
+							__BASE_VALUE - __MIN_RATED_VALUE,
+							__MAX_RATED_VALUE - __MIN_RATED_VALUE
+						),
+						0
+					),
+					1
+				)
+			VAR __STAR_RATING = ROUND(__NORMALIZED_BASE_VALUE * __MAX_NUMBER_OF_STARS, 0)
+			RETURN
+				IF(
+					NOT ISBLANK(__BASE_VALUE),
+					REPT(UNICHAR(9733), __STAR_RATING)
+						& REPT(UNICHAR(9734), __MAX_NUMBER_OF_STARS - __STAR_RATING)
+				)
+		lineageTag: 3fa9778c-581b-4431-bfbd-a91058d400c0
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "StarRating"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isText":true}
+
 	column job_title_short
 		dataType: string
 		lineageTag: e4b99351-5427-4f8b-95dd-1318085aa89e
@@ -108,22 +144,25 @@ table job_postings_flat
 
 	column salary_year_avg
 		dataType: int64
-		formatString: 0
+		formatString: \$#,0;(\$#,0);\$#,0
 		lineageTag: aff0ed69-ee75-475c-8d89-38bc0cbcd56b
 		summarizeBy: sum
 		sourceColumn: salary_year_avg
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
 	column salary_hour_avg
 		dataType: double
+		formatString: \$#,0;(\$#,0);\$#,0
 		lineageTag: 6a04e491-1f96-40a8-9bda-77b4739654d7
-		summarizeBy: sum
+		summarizeBy: average
 		sourceColumn: salary_hour_avg
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
 	column company_name
 		dataType: string

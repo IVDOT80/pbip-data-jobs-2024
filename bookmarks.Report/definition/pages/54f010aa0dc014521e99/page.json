@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
   "name": "54f010aa0dc014521e99",
-  "displayName": "Page 2",
+  "displayName": "Data Jobs Dashboard",
   "displayOption": "FitToPage",
   "height": 720,
   "width": 1280

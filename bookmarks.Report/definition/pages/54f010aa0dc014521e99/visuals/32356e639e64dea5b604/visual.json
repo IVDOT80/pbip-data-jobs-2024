@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "6de6d1010172017750c5",
+  "name": "32356e639e64dea5b604",
   "position": {
-    "x": 639.40298507462683,
-    "y": 0,
-    "z": 2000,
-    "height": 360,
-    "width": 640.29850746268653,
-    "tabOrder": 2000
+    "x": 0,
+    "y": 470.14925373134326,
+    "z": 4000,
+    "height": 249.85074626865671,
+    "width": 639.40298507462683,
+    "tabOrder": 4000
   },
   "visual": {
-    "visualType": "columnChart",
+    "visualType": "barChart",
     "query": {
       "queryState": {
         "Category": {
@@ -33,25 +33,6 @@
             }
           ]
         },
-        "Series": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "job_postings_flat"
-                    }
-                  },
-                  "Property": "job_no_degree_mention"
-                }
-              },
-              "queryRef": "job_postings_flat.job_no_degree_mention",
-              "nativeQueryRef": "No Degree Mentioned",
-              "displayName": "No Degree Mentioned"
-            }
-          ]
-        },
         "Y": {
           "projections": [
             {
@@ -64,15 +45,15 @@
                           "Entity": "job_postings_flat"
                         }
                       },
-                      "Property": "job_title"
+                      "Property": "job_title_short"
                     }
                   },
                   "Function": 5
                 }
               },
-              "queryRef": "CountNonNull(job_postings_flat.job_title)",
-              "nativeQueryRef": "Job counts",
-              "displayName": "Job counts"
+              "queryRef": "CountNonNull(job_postings_flat.job_title_short)",
+              "nativeQueryRef": "Job Count",
+              "displayName": "Job Count"
             }
           ]
         }
@@ -89,7 +70,7 @@
                         "Entity": "job_postings_flat"
                       }
                     },
-                    "Property": "job_title"
+                    "Property": "job_title_short"
                   }
                 },
                 "Function": 5
@@ -125,10 +106,63 @@
       "valueAxis": [
         {
           "properties": {
-            "labelDisplayUnits": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "1000D"
+                  "Value": "false"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "enableTitleDataLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "enableBackground": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "backgroundColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.25
+                    }
+                  }
                 }
               }
             }
@@ -143,7 +177,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'What Are The Top Jobs With No Degree Mention?'"
+                  "Value": "'What Is The Most Jobs Counts?'"
                 }
               }
             },
@@ -151,13 +185,6 @@
               "expr": {
                 "Literal": {
                   "Value": "'center'"
-                }
-              }
-            },
-            "heading": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Heading3'"
                 }
               }
             },

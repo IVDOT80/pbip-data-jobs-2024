@@ -6,8 +6,7 @@
     "y": 0,
     "z": 0,
     "height": 360,
-    "width": 640.29850746268653,
-    "tabOrder": 1000
+    "width": 640.29850746268653
   },
   "visual": {
     "visualType": "barChart",
@@ -141,42 +140,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "ff54d59ab12386bce85d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "job_postings_flat"
-              }
-            },
-            "Property": "job_title_short"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "24633eb7227b860dae64",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "job_postings_flat"
-                  }
-                },
-                "Property": "salary_year_avg"
-              }
-            },
-            "Function": 6
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

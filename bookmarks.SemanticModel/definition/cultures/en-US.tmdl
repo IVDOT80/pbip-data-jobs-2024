@@ -287,7 +287,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Job title": {
+			          "Job Title": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1947,6 +1947,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.609
 			          }
+			        },
+			        {
+			          "Yearly Salary Med": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -1979,6 +1989,16 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "Hourly Salary Med": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -2375,75 +2395,147 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "job_postings_flat.salary_star_rating": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "job_postings_flat",
+			          "ConceptualProperty": "Salary Star rating"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "salary star rating": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "rating": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "star rating": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "salary star assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "salary star evaluation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "star assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "star evaluation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "salary star score": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "salary star grade": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "salary star ranking": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "salary star mark": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "evaluation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "Avg. Job Rating": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "job_postings_flat_job_posted_date_date_hierarchy_has_job_postings_flat_job_posted_date_month": {
-			      "Binding": {
-			        "ConceptualEntity": "job_postings_flat"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "job_postings_flat.job_posted_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "job_postings_flat.job_posted_date.date_hierarchy"
-			          }
-			        },
-			        "job_postings_flat.job_posted_date.month": {
-			          "Target": {
-			            "Entity": "job_postings_flat.job_posted_date.month"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "job_postings_flat.job_posted_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "job_postings_flat.job_posted_date.month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "job_posted_date_hierarchies_have_job_posted_months"
-			        }
-			      ]
-			    },
-			    "job_postings_flat_job_posted_date_date_hierarchy_has_job_postings_flat_job_posted_date_quarter": {
-			      "Binding": {
-			        "ConceptualEntity": "job_postings_flat"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "job_postings_flat.job_posted_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "job_postings_flat.job_posted_date.date_hierarchy"
-			          }
-			        },
-			        "job_postings_flat.job_posted_date.quarter": {
-			          "Target": {
-			            "Entity": "job_postings_flat.job_posted_date.quarter"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "job_postings_flat.job_posted_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "job_postings_flat.job_posted_date.quarter"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "job_posted_date_hierarchies_have_job_posted_quarters"
-			        }
-			      ]
-			    },
 			    "job_postings_flat_job_posted_date_date_hierarchy_has_job_postings_flat_job_posted_date_year": {
 			      "Binding": {
 			        "ConceptualEntity": "job_postings_flat"
@@ -2507,6 +2599,39 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "job_posted_dates_have_job_posted_date_hierarchies"
+			        }
+			      ]
+			    },
+			    "job_postings_flat_has_salary_star_rating": {
+			      "Binding": {
+			        "ConceptualEntity": "job_postings_flat"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "job_postings_flat": {
+			          "Target": {
+			            "Entity": "job_postings_flat"
+			          }
+			        },
+			        "job_postings_flat.salary_star_rating": {
+			          "Target": {
+			            "Entity": "job_postings_flat.salary_star_rating"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "job_postings_flat"
+			            },
+			            "Object": {
+			              "Role": "job_postings_flat.salary_star_rating"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "job_postings_flats_have_salary_star_rating"
 			        }
 			      ]
 			    },
@@ -2639,6 +2764,33 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "job_postings_flats_have_salary_hour_avgs"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "job_postings_flat"
+			            },
+			            "Adjectives": [
+			              {
+			                "expensive": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "cheap": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "job_postings_flat.salary_hour_avg"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "salary_hour_avg_indicates_how_expensive_job_postings_flats_are"
 			        }
 			      ]
 			    },
@@ -2672,6 +2824,33 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "job_postings_flats_have_salary_year_avgs"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "job_postings_flat"
+			            },
+			            "Adjectives": [
+			              {
+			                "expensive": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "cheap": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "job_postings_flat.salary_year_avg"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "salary_year_avg_indicates_how_expensive_job_postings_flats_are"
 			        }
 			      ]
 			    },
@@ -3331,6 +3510,72 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "some_job_postings_flats_are_No_Degree_Mentioned_job_postings_flats"
+			        }
+			      ]
+			    },
+			    "job_postings_flat_job_posted_date_date_hierarchy_has_job_postings_flat_job_posted_date_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "job_postings_flat"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "job_postings_flat.job_posted_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "job_postings_flat.job_posted_date.date_hierarchy"
+			          }
+			        },
+			        "job_postings_flat.job_posted_date.quarter": {
+			          "Target": {
+			            "Entity": "job_postings_flat.job_posted_date.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "job_postings_flat.job_posted_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "job_postings_flat.job_posted_date.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "job_posted_date_hierarchies_have_job_posted_quarters"
+			        }
+			      ]
+			    },
+			    "job_postings_flat_job_posted_date_date_hierarchy_has_job_postings_flat_job_posted_date_month": {
+			      "Binding": {
+			        "ConceptualEntity": "job_postings_flat"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "job_postings_flat.job_posted_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "job_postings_flat.job_posted_date.date_hierarchy"
+			          }
+			        },
+			        "job_postings_flat.job_posted_date.month": {
+			          "Target": {
+			            "Entity": "job_postings_flat.job_posted_date.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "job_postings_flat.job_posted_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "job_postings_flat.job_posted_date.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "job_posted_date_hierarchies_have_job_posted_months"
 			        }
 			      ]
 			    },

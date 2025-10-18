@@ -7,7 +7,7 @@
     "z": 1000,
     "height": 360,
     "width": 640.29850746268653,
-    "tabOrder": 2000
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -263,25 +263,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "9b3292e00acb042e069a",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "job_postings_flat"
-                  }
-                },
-                "Property": "salary_year_avg"
-              }
-            },
-            "Function": 6
-          }
-        },
-        "type": "Advanced"
-      },
       {
         "name": "14f88ea89ba1643b51d9",
         "field": {
