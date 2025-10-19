@@ -4,9 +4,10 @@
   "position": {
     "x": 0,
     "y": 0,
-    "z": 1000,
+    "z": 2000,
     "height": 53.731343283582085,
-    "width": 337.61194029850748
+    "width": 337.61194029850748,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "textbox",
@@ -18,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Data Job Dashboard",
+                    "value": "Data Job Dashboard 2024",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontFamily": "DIN",

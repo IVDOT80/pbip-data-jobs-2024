@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "854ccbb7d160c8004454",
+  "name": "0f13c2e88003e2005e0d",
   "position": {
-    "x": 0,
-    "y": 0,
-    "z": 7000,
-    "height": 720.34632034632034,
-    "width": 438.85714285714283,
+    "x": 2.8742514970059876,
+    "y": 365.98802395209577,
+    "z": 500,
+    "height": 250.05988023952096,
+    "width": 617.96407185628743,
     "tabOrder": 4000
   },
   "visual": {
@@ -18,7 +18,14 @@
             "tileShape": {
               "expr": {
                 "Literal": {
-                  "Value": "'rectangle'"
+                  "Value": "'rectangleRounded'"
+                }
+              }
+            },
+            "rectangleRoundedCurve": {
+              "expr": {
+                "Literal": {
+                  "Value": "23L"
                 }
               }
             }
@@ -46,8 +53,8 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
+                      "ColorId": 2,
+                      "Percent": 0.6
                     }
                   }
                 }
@@ -58,10 +65,38 @@
             "id": "default"
           }
         }
+      ],
+      "outline": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'bar chart'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
   },
-  "isHidden": true,
+  "parentGroupName": "9f7ba21931a46b30040b",
   "howCreated": "InsertVisualButton"
 }

@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "32356e639e64dea5b604",
   "position": {
-    "x": 0,
-    "y": 470.14925373134326,
-    "z": 4000,
-    "height": 249.85074626865671,
-    "width": 639.40298507462683,
-    "tabOrder": 4000
+    "x": 26.826347305389223,
+    "y": 472.33532934131739,
+    "z": 5000,
+    "height": 233.77245508982037,
+    "width": 585.38922155688624,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "barChart",
@@ -168,6 +168,24 @@
             }
           }
         }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -199,6 +217,32 @@
               "expr": {
                 "Literal": {
                   "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

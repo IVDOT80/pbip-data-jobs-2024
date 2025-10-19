@@ -4,10 +4,10 @@
   "position": {
     "x": 319.70149253731341,
     "y": 70.74626865671641,
-    "z": 5002,
+    "z": 8000,
     "height": 149.55223880597015,
     "width": 319.70149253731341,
-    "tabOrder": 5002
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -135,6 +135,19 @@
             "id": "default"
           }
         }
+      ],
+      "fillCustom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -164,7 +177,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -197,26 +210,21 @@
             }
           }
         }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "a11b2a0ee7020039db26",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "job_postings_flat"
-              }
-            },
-            "Property": "Salary Star rating"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
