@@ -1,0 +1,309 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "aa25cf38c1a1834608a8",
+  "position": {
+    "x": 319.04191616766468,
+    "y": 100.59880239520959,
+    "z": 4000,
+    "height": 225.14970059880241,
+    "width": 273.05389221556885,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "gauge",
+    "query": {
+      "queryState": {
+        "MaxValue": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "job_postings_flat"
+                        }
+                      },
+                      "Property": "salary_hour_avg"
+                    }
+                  },
+                  "Function": 4
+                }
+              },
+              "queryRef": "Max(job_postings_flat.salary_hour_avg)",
+              "nativeQueryRef": "Max of salary_hour_avg"
+            }
+          ]
+        },
+        "MinValue": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "job_postings_flat"
+                        }
+                      },
+                      "Property": "salary_hour_avg"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(job_postings_flat.salary_hour_avg)",
+              "nativeQueryRef": "Min Hourly Salary ($USD)",
+              "displayName": "Min Hourly Salary ($USD)",
+              "format": "\\$#,0;(\\$#,0);\\$#,0"
+            }
+          ]
+        },
+        "TargetValue": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "job_postings_flat"
+                        }
+                      },
+                      "Property": "salary_hour_avg"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Avg(job_postings_flat.salary_hour_avg)",
+              "nativeQueryRef": "Avg Hourly Salary ($USD)",
+              "displayName": "Avg Hourly Salary ($USD)",
+              "format": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "job_postings_flat"
+                        }
+                      },
+                      "Property": "salary_hour_avg"
+                    }
+                  },
+                  "Function": 6
+                }
+              },
+              "queryRef": "Median(job_postings_flat.salary_hour_avg)",
+              "nativeQueryRef": "Med Hourly Salary ($USD)",
+              "displayName": "Med Hourly Salary ($USD)",
+              "format": "\\$#,0.00;(\\$#,0.00);\\$#,0.00"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "job_postings_flat"
+                      }
+                    },
+                    "Property": "salary_hour_avg"
+                  }
+                },
+                "Function": 6
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "target": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "calloutValue": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "target": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            },
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.25
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Med Hourly Salary ($USD)'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
