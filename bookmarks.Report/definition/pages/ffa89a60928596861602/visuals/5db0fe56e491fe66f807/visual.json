@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "994913fbb72d4d13a1aa",
+  "name": "5db0fe56e491fe66f807",
   "position": {
-    "x": 2.8742514970059876,
-    "y": 109.22155688622755,
-    "z": 1000,
-    "height": 250.05988023952096,
-    "width": 617.96407185628743,
-    "tabOrder": 1000
+    "x": 521.62701458173444,
+    "y": 238.28923041402183,
+    "z": 3000,
+    "height": 394.90406753645431,
+    "width": 758.37298541826544,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "shape",
@@ -25,7 +25,7 @@
             "rectangleRoundedCurve": {
               "expr": {
                 "Literal": {
-                  "Value": "23L"
+                  "Value": "10L"
                 }
               }
             }
@@ -64,6 +64,17 @@
           "selector": {
             "id": "default"
           }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
         }
       ],
       "outline": [
@@ -87,7 +98,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'trend'"
+                  "Value": "'bar chart'"
                 }
               }
             }
@@ -97,6 +108,6 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "9f7ba21931a46b30040b",
+  "parentGroupName": "5909a072997332bca450",
   "howCreated": "InsertVisualButton"
 }

@@ -5,9 +5,9 @@
     "x": 0,
     "y": 0,
     "z": 2000,
-    "height": 53.731343283582085,
-    "width": 337.61194029850748,
-    "tabOrder": 9000
+    "height": 70.729086722947045,
+    "width": 434.19800460475824,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "textbox",
@@ -23,7 +23,7 @@
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontFamily": "DIN",
-                      "fontSize": "20pt"
+                      "fontSize": "28pt"
                     }
                   }
                 ]

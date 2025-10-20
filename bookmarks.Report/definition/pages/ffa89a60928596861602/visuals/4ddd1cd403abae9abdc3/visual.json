@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "4ddd1cd403abae9abdc3",
   "position": {
-    "x": 959.04191616766468,
-    "y": 325.748502994012,
-    "z": 7002,
-    "height": 394.73053892215569,
-    "width": 312.33532934131739,
-    "tabOrder": 7002
+    "x": 902.77820414428231,
+    "y": 326.13967766692247,
+    "z": 10000,
+    "height": 388.02762854950112,
+    "width": 377.22179585571752,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "treemap",
@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "job_postings_flat.job_schedule_type",
-              "nativeQueryRef": "job_schedule_type",
-              "active": true
+              "nativeQueryRef": "Schedule type category",
+              "active": true,
+              "displayName": "Schedule type category"
             }
           ]
         },
@@ -36,23 +37,49 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
+                "Arithmetic": {
+                  "Left": {
+                    "Aggregation": {
                       "Expression": {
-                        "SourceRef": {
-                          "Entity": "job_postings_flat"
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "job_postings_flat"
+                            }
+                          },
+                          "Property": "job_schedule_type"
                         }
                       },
-                      "Property": "job_schedule_type"
+                      "Function": 5
                     }
                   },
-                  "Function": 5
+                  "Right": {
+                    "ScopedEval": {
+                      "Expression": {
+                        "Aggregation": {
+                          "Expression": {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "job_postings_flat"
+                                }
+                              },
+                              "Property": "job_schedule_type"
+                            }
+                          },
+                          "Function": 5
+                        }
+                      },
+                      "Scope": []
+                    }
+                  },
+                  "Operator": 3
                 }
               },
               "queryRef": "CountNonNull(job_postings_flat.job_schedule_type)",
-              "nativeQueryRef": "Count of job_schedule_type",
-              "format": "G"
+              "nativeQueryRef": "%GT Count of job_schedule_type",
+              "displayName": "Job count",
+              "format": "0.00%;-0.00%;0.00%"
             }
           ]
         }
@@ -285,6 +312,69 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "Aggregation": {
+                          "Expression": {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "job_postings_flat"
+                                }
+                              },
+                              "Property": "job_schedule_type"
+                            }
+                          },
+                          "Function": 5
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient2": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#41a4ff'"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#0d6abf'"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'asZero'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ]
+          }
         }
       ],
       "labels": [
@@ -300,7 +390,14 @@
             "bold": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
                 }
               }
             }
@@ -321,6 +418,13 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
                 }
               }
             }
@@ -357,6 +461,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'What Are The Type Of Data Jobs?'"
                 }
               }
             }
@@ -426,26 +537,7 @@
             "Property": "job_schedule_type"
           }
         },
-        "type": "Categorical"
-      },
-      {
-        "name": "4e27c611c0450d0c87d5",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "job_postings_flat"
-                  }
-                },
-                "Property": "job_schedule_type"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced",
+        "type": "Categorical",
         "filter": {
           "Version": 2,
           "From": [
@@ -458,28 +550,56 @@
           "Where": [
             {
               "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 2,
-                  "Left": {
-                    "Aggregation": {
-                      "Expression": {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "j"
-                            }
-                          },
-                          "Property": "job_schedule_type"
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "j"
+                          }
+                        },
+                        "Property": "job_schedule_type"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Contractor'"
                         }
-                      },
-                      "Function": 5
-                    }
-                  },
-                  "Right": {
-                    "Literal": {
-                      "Value": "1500L"
-                    }
-                  }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Full-time'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Internship'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Part-time'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Temp work'"
+                        }
+                      }
+                    ]
+                  ]
                 }
               }
             }

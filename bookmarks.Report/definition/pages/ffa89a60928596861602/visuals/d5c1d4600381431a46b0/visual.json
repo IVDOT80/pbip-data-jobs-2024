@@ -2,11 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "d5c1d4600381431a46b0",
   "position": {
-    "x": 480,
+    "x": 480.3683806600153,
     "y": 0,
-    "z": 1000,
-    "height": 100.59880239520959,
-    "width": 320
+    "z": 2000,
+    "height": 87.4290099769762,
+    "width": 319.26323867996928,
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -274,5 +275,28 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "69c174d5f1c1c4201452",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "job_postings_flat"
+                  }
+                },
+                "Property": "job_title_short"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
